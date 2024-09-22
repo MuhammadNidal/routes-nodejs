@@ -29,7 +29,7 @@ const server = http.createServer((req, res) => {
     }
     // Handle POST /data (add new data)
     else if (url === '/post' && method === 'POST') {
-        
+
         getRequestBody(req, (body) => {
             const parsedData = JSON.parse(body);  
             dataStore.push(parsedData);           
@@ -41,6 +41,7 @@ const server = http.createServer((req, res) => {
     // Handle PUT /data (update existing data by id)
     else if (url === '/put' && method === 'PUT') {
         getRequestBody(req, (body) => {
+            
             const parsedData = JSON.parse(body);  // Parse the data to update
             const index = dataStore.findIndex(item => item.id === parsedData.id); // Find the item by ID
 
