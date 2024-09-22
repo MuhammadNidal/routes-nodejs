@@ -79,13 +79,14 @@ const server = http.createServer((req, res) => {
 
        else {
         res.writeHead(404);
-        
+
         res.end(JSON.stringify({ message: 'Route not found' }));
     }
 });
 
 // Start the server on port 3000
 const port = 3000;
+
 server.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
