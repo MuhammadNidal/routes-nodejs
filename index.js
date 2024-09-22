@@ -71,7 +71,7 @@ const server = http.createServer((req, res) => {
             } else {
                 res.writeHead(404);               // Send 404 if the item was not found
                 res.end(JSON.stringify({ message: 'Data not found' }));
-                
+
             }
         });
     }
@@ -79,6 +79,7 @@ const server = http.createServer((req, res) => {
 
        else {
         res.writeHead(404);
+        
         res.end(JSON.stringify({ message: 'Route not found' }));
     }
 });
