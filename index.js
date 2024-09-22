@@ -48,7 +48,7 @@ const server = http.createServer((req, res) => {
             if (index !== -1) {
                 dataStore[index] = parsedData;    // Update the data
                 res.writeHead(200);
-                
+
                 res.end(JSON.stringify({ message: 'Data updated successfully', data: parsedData }));
             } else {
                 res.writeHead(404);               // Send 404 if the item was not found
@@ -66,6 +66,7 @@ const server = http.createServer((req, res) => {
             if (index !== -1) {
                 dataStore.splice(index, 1);       // Remove the data from the array
                 res.writeHead(200);
+                
                 res.end(JSON.stringify({ message: 'Data deleted successfully' }));
             } else {
                 res.writeHead(404);               // Send 404 if the item was not found
