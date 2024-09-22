@@ -18,6 +18,7 @@ const getRequestBody = (req, callback) => {
 const server = http.createServer((req, res) => {
     // Set the response headers
     res.setHeader('Content-Type', 'application/json');
+    
     const { method, url } = req;
 
     // Handle GET /data (fetch all data)
