@@ -41,13 +41,14 @@ const server = http.createServer((req, res) => {
     // Handle PUT /data (update existing data by id)
     else if (url === '/put' && method === 'PUT') {
         getRequestBody(req, (body) => {
-            
+
             const parsedData = JSON.parse(body);  // Parse the data to update
             const index = dataStore.findIndex(item => item.id === parsedData.id); // Find the item by ID
 
             if (index !== -1) {
                 dataStore[index] = parsedData;    // Update the data
                 res.writeHead(200);
+                
                 res.end(JSON.stringify({ message: 'Data updated successfully', data: parsedData }));
             } else {
                 res.writeHead(404);               // Send 404 if the item was not found
