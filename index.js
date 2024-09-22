@@ -24,11 +24,12 @@ const server = http.createServer((req, res) => {
     // Handle GET /data (fetch all data)
     if (url === '/' && method === 'GET') {
         res.writeHead(200);
-        
+
         res.end(JSON.stringify({ message: 'Data fetched successfully', data: dataStore }));
     }
     // Handle POST /data (add new data)
     else if (url === '/post' && method === 'POST') {
+        
         getRequestBody(req, (body) => {
             const parsedData = JSON.parse(body);  
             dataStore.push(parsedData);           
