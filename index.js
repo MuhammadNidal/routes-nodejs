@@ -66,11 +66,12 @@ const server = http.createServer((req, res) => {
             if (index !== -1) {
                 dataStore.splice(index, 1);       // Remove the data from the array
                 res.writeHead(200);
-                
+
                 res.end(JSON.stringify({ message: 'Data deleted successfully' }));
             } else {
                 res.writeHead(404);               // Send 404 if the item was not found
                 res.end(JSON.stringify({ message: 'Data not found' }));
+                
             }
         });
     }
